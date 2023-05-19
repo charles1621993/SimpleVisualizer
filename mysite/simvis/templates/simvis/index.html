@@ -1,0 +1,30 @@
+<form action="" method="post">
+    {% csrf_token %}
+    <textarea name="message" rows="10" cols="30" >{{ value }}</textarea>
+    <select class="form-select" id="ind" name="ind">
+    {% for item in dfcolumns %}
+    <option value="{{item}}">{{item}}</option>
+    {% endfor %}
+    </select>
+    <select class="form-select" id="x" name="x">
+    {% for item in dfcolumnx %}
+    <option value="{{item}}">{{item}}</option>
+    {% endfor %}
+    </select>
+    <select class="form-select" id="y" name="y">
+    {% for item in dfcolumny %}
+    <option value="{{item}}">{{item}}</option>
+    {% endfor %}
+    </select>
+    <br><br>
+    <input type="submit">
+    
+  </form>
+
+{% autoescape off %} {{ data }} {% endautoescape %}
+
+{% autoescape off %} {{ datascatter }} {% endautoescape %}
+
+{% autoescape off %} {{ databar}} {% endautoescape %}
+
+{% autoescape off %} {{ datastem}} {% endautoescape %}
